@@ -3,27 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>A Little Something For You</title>
+    <title>For You ✨</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="hearts-bg" id="hearts-bg"></div>
+    
     <div class="container">
-        <div id="home-screen">
-            <h1>How are you feeling right now?</h1>
-            <p class="subtitle">Pick a button, no pressure.</p>
-            <div class="button-grid">
-                <button onclick="getSupport('Overwhelmed')">Overwhelmed</button>
-                <button onclick="getSupport('Numb')">Numb</button>
-                <button onclick="getSupport('Restless')">Restless</button>
-                <button onclick="getSupport('Tired')">Just Tired</button>
-                <button onclick="getSupport('SelfCare')" class="special-btn">Need a distraction?</button>
-            </div>
+        <h1>A Little Box of Sunshine</h1>
+        <p class="subtitle">Click a heart to open a message</p>
+        
+        <div class="gift-grid">
+            <div class="heart-item" onclick="openGift(0)">💖</div>
+            <div class="heart-item" onclick="openGift(1)">🌸</div>
+            <div class="heart-item" onclick="openGift(2)">🎀</div>
+            <div class="heart-item" onclick="openGift(3)">✨</div>
         </div>
 
-        <div id="display-area" class="hidden">
-            <h2 id="mood-title"></h2>
-            <p id="suggestion-text"></p>
-            <button class="back-btn" onclick="reset()">? Back</button>
+        <div id="message-modal" class="hidden">
+            <div class="modal-content">
+                <p id="gift-text"></p>
+                <button onclick="closeGift()">Close</button>
+            </div>
         </div>
     </div>
     <script src="script.js"></script>
