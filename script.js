@@ -1,24 +1,42 @@
-const content = {
-    "Overwhelmed": "It's okay to feel like this. Try the '5-4-3-2-1' rule: Name 5 things you see, 4 things you can touch, 3 things you hear, 2 things you smell, and 1 thing you can taste. Ground yourself. You're doing okay.",
-    "Numb": "When everything feels like 'nothing,' try to change your temperature. Wash your face with cold water or hold a warm mug of tea. Let the physical sensation bring you back slowly.",
-    "Restless": "Your mind is racing, so let's give your hands something to do. Go reorganize one small drawer, or draw a chaotic scribble on a piece of paper. Just one small physical task.",
-    "Tired": "You have permission to rest. Not 'rest so you can do more later,' but just rest because you're human. The world can wait until tomorrow. Put your phone on 'Do Not Disturb' for 20 minutes.",
-    "SelfCare": "Let's find a tiny joy. Go to YouTube and search for 'Lofi Hip Hop Radio' or 'Cute Red Panda videos.' Sometimes a 5-minute brain break is all we need."
-};
+const messages = [
+    "You are the only best human being I know. I'm so glad you're or were in my life. 🌸",
+    "Just a reminder that you are cared for, even on the days you feel invisible. 🎀",
+    "I believe in you more than words can say. Always keep shining, Always be happy. ✨",
+    "You make the world a little brighter just by being you. Sending you so much love. 💖"
+];
 
-function getSupport(mood) {
-    document.getElementById('home-screen').classList.add('hidden');
+function openGift(index) {
+    const modal = document.getElementById('message-modal');
+    const text = document.getElementById('gift-text');
     
-    const display = document.getElementById('display-area');
-    const title = document.getElementById('mood-title');
-    const text = document.getElementById('suggestion-text');
-    
-    title.innerText = mood;
-    text.innerText = content[mood];
-    display.classList.remove('hidden');
+    text.innerText = messages[index];
+    modal.style.display = 'flex';
 }
 
-function reset() {
-    document.getElementById('home-screen').classList.remove('hidden');
-    document.getElementById('display-area').classList.add('hidden');
+function closeGift() {
+    const modal = document.getElementById('message-modal');
+    modal.style.display = 'none';
 }
+
+// Background Floating Hearts
+function createFloatingHeart() {
+    const heart = document.createElement('div');
+    heart.innerHTML = '❤️';
+    heart.className = 'floating-heart';
+    heart.style.left = Math.random() * 100 + 'vw';
+    heart.style.fontSize = (Math.random() * 20 + 10) + 'px';
+    
+    document.body.appendChild(heart);
+
+    const animation = heart.animate([
+        { transform: 'translateY(0)', opacity: 0.8 },
+        { transform: 'translateY(-110vh)', opacity: 0 }
+    ], {
+        duration: 4000 + Math.random() * 3000,
+        easing: 'linear'
+    });
+
+    animation.onfinish = () => heart.remove();
+}
+
+setInterval(createFloatingHeart, 500);
