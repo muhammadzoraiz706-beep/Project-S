@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Little Something For You</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div id="home-screen">
+            <h1>How are you feeling right now?</h1>
+            <p class="subtitle">Pick a button, no pressure.</p>
+            <div class="button-grid">
+                <button onclick="getSupport('Overwhelmed')">Overwhelmed</button>
+                <button onclick="getSupport('Numb')">Numb</button>
+                <button onclick="getSupport('Restless')">Restless</button>
+                <button onclick="getSupport('Tired')">Just Tired</button>
+                <button onclick="getSupport('SelfCare')" class="special-btn">Need a distraction?</button>
+            </div>
+        </div>
+
+        <div id="display-area" class="hidden">
+            <h2 id="mood-title"></h2>
+            <p id="suggestion-text"></p>
+            <button class="back-btn" onclick="reset()">? Back</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
