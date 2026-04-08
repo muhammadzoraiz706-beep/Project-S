@@ -7,20 +7,20 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="hearts-bg" id="hearts-bg"></div>
+    <div id="hearts-bg"></div>
     
     <div class="container">
         <h1>A Little Box of Sunshine</h1>
         <p class="subtitle">Click a heart to open a message</p>
         
         <div class="gift-grid">
-            <div class="heart-item" onclick="openGift(0)">💖</div>
-            <div class="heart-item" onclick="openGift(1)">🌸</div>
-            <div class="heart-item" onclick="openGift(2)">🎀</div>
-            <div class="heart-item" onclick="openGift(3)">✨</div>
+            <div class="heart-item" onclick="openGift(0)">♥</div>
+            <div class="heart-item" onclick="openGift(1)">✿</div>
+            <div class="heart-item" onclick="openGift(2)">🎁</div>
+            <div class="heart-item" onclick="openGift(3)">★</div>
         </div>
 
-        <div id="message-modal" class="hidden">
+        <div id="message-modal">
             <div class="modal-content">
                 <p id="gift-text"></p>
                 <button onclick="closeGift()">Close</button>
